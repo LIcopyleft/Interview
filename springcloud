@@ -1,0 +1,38 @@
+springcloud  并不是重复 boot 造轮子 在 boot风格在进行封装 拼比掉复杂的配置和诗选远离
+
+
+Netflix  spring 各项服务依赖它 非常重要。 组成微服务核心 
+
+
+
+Netflix Eureka 
+	服务中心 云端服务发现。 基于REST的服务。
+
+
+Netflix zuul
+
+Netflix Hystrix: 熔断器。容错处理工具，作用为通过熔断机制控制服务和第三方控制服务的
+
+就是如果服务出现问题，进行熔断，下线处理
+
+
+Netflix zuul ,在云平台上提供动态路由，监控 ，弹性，安全等边缘服务框架
+
+	
+Netflix Archaius : 配置管理api。作用 提供动态类型属性 线程安全配置操作
+
+
+轮询框架 ，  每一段时间读取配置源 配置内容， 修改配置文件后无需重启服务。
+
+
+
+Spring Cloud Cluster ： 取代 spring Integration 。 提供在分布式系统中的集群所需要的基础功能
+
+比如 选举  集群状态一致性 ， 全局锁。 tokens 等行间状态模式的抽象和实现
+
+
+Spring Cloud Stream ： 创建消息驱动微服务应用框架。
+
+
+
+
