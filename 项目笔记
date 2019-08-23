@@ -1,0 +1,160 @@
+
+
+数据库表 理解 
+	
+	factvalue  事实值 ，真正数据保存表
+	
+	维度  4 到 5 个 维度确定数据
+	
+	time_id  
+	
+	indicator_id
+	
+	region_id
+	
+	industry_id 
+	
+	equipment_id
+	
+	通过这几个维度进行去确定（事实）数据
+	
+	
+	
+	数据操作：
+	db_dataset（一方） ：标识 主体分类名称  每个分类对应真实事实数据表名
+	
+	
+	db_databasedimension：数据基础维度表     db_dataset的主键关联表（一对多）
+	
+	
+	
+	db_dimensioncode：数据基础维度code表     关联db_databasedimension  dimensioncode字段  保存维度名称，维度code对应字段名
+
+
+
+
+
+
+
+项目中设置缓存：
+	
+	加读锁 ， 
+
+	获取key ，key获取逻辑是 ： 以该参数为key，map中是否有已经生成的uuid作为map的value，有则返回map中的value作为key。没有则，生成uuid 作为key
+
+	
+	将 数据库查询数据对象，转换为输入流，保存到 当前目录 下key.json 缓存
+
+	并以参数对象tostring 作为map key  ， uuid 作为 map value
+
+	
+	将map 转成字符串后转换为输入流，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	db_theme（一方） ： 主题分类表  。 字段 ： 主题名称  排序字段  默认时间sql 
+	
+	
+	db_graph  图像种类（多方） ： 主题页内图片信息 ， （一对多）外键关联db_theme主键id   api路径
+	
+
+
+
+
+
+	db_graph_series  图像种类系列表 ， 字段 ： 图像名称  别名  关联db_dataset 表中 database_id  和 几个维度表的id
+
+（理解：通过页面上点击主题分类， 分类一对多关联图像种类表， 图像种类表一对多关联图像系列表（每个图表上的种类比如有折线图三条线 ） ，每个系列对应数据操作中的 dataset_id 找到 图表对应的事实数据表名
+
+	db_dataset 对应数据基础维度表 ，得到 维度表名 维度code 等信息， 进而关联数据维度code表 
+
+
+）
+
+
+
+
+获取国家接口
+
+	根据图表id 查询 图表
+	
+	根据图表信息查询 图表系列信息列表
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	数据库锁 
+	
+	
+	redis 使用 
+	
+	
+	
+	es使用
+	
+	权限控制 
+	
+	shiro使用等
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
